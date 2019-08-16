@@ -5,6 +5,7 @@
       class="user-poster"
       src="https://img.yzcdn.cn/public_files/2017/10/23/8690bb321356070e0b8c4404d087f8fd.png"
     />
+
     <van-row class="user-links">
       <van-col span="8">
         <van-circle
@@ -38,21 +39,14 @@
       </van-col>
     </van-row>
 
-    <van-grid :column-num="3">
-  <van-grid-item
-    v-for="value in 6"
-    :key="value"
-    icon="photo-o"
-    text="文字"
-  />
-</van-grid>
+    <van-grid :column-num="4">
+      <van-grid-item v-for="menu in this.menus" :key="menu.id" icon="photo-o" :text="menu.name" />
+    </van-grid>
 
-    <van-cell-group>
-      <van-cell icon="points" title="我的积分" is-link />
-      <van-cell icon="gold-coin-o" title="我的优惠券" is-link />
-      <van-cell icon="gift-o" title="我收到的礼物" is-link />
-    </van-cell-group>
-
+<van-notice-bar
+  text="通知内容"
+  left-icon="volume-o"
+/>
     <van-tabbar v-model="active">
       <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
       <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
@@ -83,6 +77,28 @@ export default {
   },
   data() {
     return {
+      menus: [
+        {
+          id: "1",
+          name: "朝会"
+        },
+        {
+          id: "2",
+          name: "后宫"
+        },
+        {
+          id: "3",
+          name: "官员"
+        },
+        {
+          id: "4",
+          name: "皇嗣"
+        },
+        {
+          id: "5",
+          name: "奏折"
+        }
+      ],
       active: "home",
       currentRate1: 30,
       currentRate2: 50,
