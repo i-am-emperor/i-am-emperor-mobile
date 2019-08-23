@@ -43,10 +43,7 @@
       <van-grid-item v-for="menu in this.menus" :key="menu.id" icon="photo-o" :text="menu.name" />
     </van-grid>
 
-<van-notice-bar
-  text="通知内容"
-  left-icon="volume-o"
-/>
+    <van-notice-bar text="通知内容" left-icon="volume-o" />
     <van-tabbar v-model="active">
       <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
       <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
@@ -96,7 +93,7 @@ export default {
         },
         {
           id: "5",
-          name: "奏折"
+          name: "圣旨"
         }
       ],
       active: "home",
